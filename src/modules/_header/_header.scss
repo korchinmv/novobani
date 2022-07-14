@@ -1,0 +1,35 @@
+.header {
+	background-color: var(--black-color);
+
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 12px 0;
+	}
+
+	&__social {
+		display: flex;
+
+		svg {
+			width: 18px;
+			height: 18px;
+			fill: var(--grey-text-color);
+		}
+	}
+
+	&__bottom {
+		display: flex;
+		justify-content: space-between;
+		padding: 45px 0 25px 0;
+	}
+
+	&__nav {
+		display: flex;
+	}
+
+	&__logo {
+		flex-shrink: 0;
+		margin-right: 60px;
+	}
+}

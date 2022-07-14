@@ -1,11 +1,16 @@
 :root {
 	// base
-	--font-family: "Open Sans", sans-serif;
-	--content-width: 1170px;
+	--font-family: "FuturaNew", sans-serif;
+	--content-width: 1160px;
 	--container-offset: 15px;
 	--container-width: calc(var(--content-width) + (var(--container-offset) * 2));
 
 	// colors
-	--light-color: #fff;
-	--black-color: #000;
+	--accent-color: #ff623d;
+	--black-color: #333;
+	--brown-color: #f4e9bf;
+	--grey-color: #828282;
+	--grey-text-color: #4f4f4f;
+	--light-color: #e5e5e5;
+	--white-color: #fff;
 }

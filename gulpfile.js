@@ -205,7 +205,7 @@ const imgToApp = () => {
 };
 
 const webpImages = () => {
-	return src('./src/images/**/**.{jpg,jpeg,png}')
+	return src('./src/images/**/**.{jpg,jpeg,png,svg}')
 		.pipe(webp())
 		.pipe(dest('./app/images'))
 };
