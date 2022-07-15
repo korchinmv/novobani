@@ -43,10 +43,10 @@ const styles = () => {
 };
 
 const fonts = () => {
-	src('./src/fonts/**.ttf')
+	src('./src/fonts/**.{ttf,woff,woff2}')
 		.pipe(ttf2woff())
 		.pipe(dest('./app/fonts/'))
-	return src('./src/fonts/**.ttf')
+	return src('./src/fonts/**.{ttf,woff,woff2}')
 		.pipe(ttf2woff2())
 		.pipe(dest('./app/fonts/'))
 };

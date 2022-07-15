@@ -21,7 +21,11 @@
 	&__bottom {
 		display: flex;
 		justify-content: space-between;
-		padding: 45px 0 25px 0;
+		padding: 45px 0 15px 0;
+	}
+
+	&__menu {
+		margin-right: 30px;
 	}
 
 	&__nav {
@@ -30,6 +34,10 @@
 
 	&__logo {
 		flex-shrink: 0;
-		margin-right: 60px;
+		margin-right: 40px;
+	}
+
+	&__call {
+		flex-shrink: 0;
 	}
 }

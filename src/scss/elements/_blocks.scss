@@ -33,10 +33,10 @@
 
 		@media (any-hover: hover) {
 			&:hover {
-				color: var(--brown-color);
+				color: var(--accent-color);
 
 				.social-list__name::after {
-					background-color: var(--brown-color);
+					background-color: var(--accent-color);
 				}
 			}
 		}
@@ -84,38 +84,21 @@
 
 .menu {
 	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 
 	&__item {
 		color: var(--white-color);
 		font-size: 16px;
 		position: relative;
-		padding-right: 15px;
-
-		&:not(:last-child) {
-			margin-right: 40px;
-		}
-
-		&--blog {
-			padding-right: 23px;
-			position: relative;
-
-			&:before {
-				content: "";
-				display: block;
-				background-image: url(../images/svg/fire.svg);
-				position: absolute;
-				width: 15px;
-				height: 16px;
-				right: 0;
-				bottom: 4px;
-			}
-		}
+		padding-bottom: 10px;
+		margin: 0 22px;
 	}
 
 	&__link {
 		transition: color 0.3s ease 0s;
 		position: relative;
-		padding-bottom: 1px;
+		padding: 0 1px;
 
 		&::after {
 			content: "";
@@ -164,15 +147,32 @@
 
 	&__dropdown {
 		position: absolute;
-		top: 40px;
+		top: 35px;
 		opacity: 0;
 		visibility: hidden;
 		transition: opacity 0.3s ease-in-out 0s, visibility 0.3s ease-in-out 0s;
+		z-index: 2;
 
 		&--active {
 			opacity: 1;
 			visibility: visible;
 		}
+	}
+}
+
+.blog {
+	padding-right: 23px;
+	position: relative;
+
+	&:before {
+		content: "";
+		display: block;
+		background-image: url(../images/svg/fire.svg);
+		position: absolute;
+		width: 15px;
+		height: 16px;
+		right: 0;
+		bottom: 10px;
 	}
 }
 
@@ -227,7 +227,6 @@
 		color: var(--black-color);
 		font-size: 16px;
 		position: relative;
-		padding: 0 1px;
 		transition: color 0.3s ease 0s;
 
 		&::after {
@@ -244,6 +243,8 @@
 
 		@media (any-hover: hover) {
 			&:hover {
+				color: var(--accent-color);
+
 				&::after {
 					background-color: var(--accent-color);
 				}
