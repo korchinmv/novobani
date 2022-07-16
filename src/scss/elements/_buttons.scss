@@ -1,3 +1,43 @@
 .burger {
 	@include burger;
 }
+
+.btn {
+	border-radius: 10px;
+	box-shadow: 0 6px 0 var(--orange-dark);
+	font-weight: 400;
+	line-height: 1;
+	padding: 23px 48px 23px 46px;
+	transition: box-shadow 0.3s ease 0s, transform 0.2s ease 0s;
+	display: flex;
+	align-items: center;
+
+	@include mq("tablet-s", max) {
+		padding: 18px 42px 18px 40px;
+	}
+
+	@include mq("phone", max) {
+		padding: 12px 32px 12px 30px;
+	}
+
+	svg {
+		fill: var(--white-color);
+		width: 15px;
+		height: 15px;
+		margin-right: 12px;
+	}
+
+	&:hover {
+		transform: translateY(-5px);
+		box-shadow: 0 11px 0 var(--orange-dark);
+	}
+
+	&:active {
+		transform: translateY(0);
+		box-shadow: 0 4px 0 var(--orange-dark);
+	}
+
+	&--orange {
+		background-color: var(--accent-color);
+	}
+}

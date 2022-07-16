@@ -4,6 +4,7 @@
 @import "./base/fonts";
 @import "./base/reset";
 @import "./base/settings";
+@import "./base/libs";
 @import "./base/animations";
 @import "./base/patterns";
 
@@ -16,5 +17,6 @@
 
 //Блоки страницы
 @import "../modules/_header/_header";
+@import "../modules/_hero-block/_hero-block";
 
 @import "../modules/_footer/_footer";

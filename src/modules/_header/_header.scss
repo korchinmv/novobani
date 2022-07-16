@@ -1,5 +1,14 @@
 .header {
-	background-color: var(--black-color);
+	position: relative;
+
+	&__top-wrapper {
+		background-color: var(--black-color);
+		z-index: 1;
+
+		@include mq("tablet-s", max) {
+			display: none;
+		}
+	}
 
 	&__top {
 		display: flex;
@@ -18,26 +27,93 @@
 		}
 	}
 
+	&__bottom-wrapper {
+		position: absolute;
+		bottom: -90px;
+		left: 0;
+		right: 0;
+		z-index: 2;
+	}
+
 	&__bottom {
+		background-color: transparent;
 		display: flex;
 		justify-content: space-between;
 		padding: 45px 0 15px 0;
+
+		@include mq("tablet-s", max) {
+			align-items: center;
+		}
+
+		@include mq("phone", max) {
+			padding: 0 0 25px 0;
+		}
 	}
 
 	&__menu {
 		margin-right: 30px;
+
+		@include mq("tablet-s", max) {
+			margin-right: 0;
+		}
 	}
 
 	&__nav {
 		display: flex;
+		justify-content: space-between;
+		width: 100%;
+
+		@include mq("tablet-s", max) {
+			position: absolute;
+			display: flex;
+			flex-direction: column;
+			background-color: var(--accent-color);
+			padding: 55px 50px 80px 100px;
+			top: 0;
+			right: 0;
+			text-align: center;
+			transform: translateX(200%);
+			transition: transform 0.4s;
+			z-index: 100;
+			max-width: 500px;
+			width: 100%;
+
+			&:after {
+				content: " ";
+				background-image: url(../images/line-dashed.png);
+				position: absolute;
+				bottom: 150px;
+				left: 0;
+				width: 100%;
+				height: 1px;
+
+				@include mq("phone", max) {
+					bottom: 80px;
+				}
+			}
+
+			@include mq("phone", max) {
+				padding: 55px 50px 30px 70px;
+				top: -20px;
+			}
+		}
+
+		&--active {
+			transform: translateX(0);
+		}
 	}
 
 	&__logo {
 		flex-shrink: 0;
 		margin-right: 40px;
+		z-index: 100;
 	}
 
 	&__call {
 		flex-shrink: 0;
+	}
+
+	&__burger {
+		z-index: 101;
 	}
 }

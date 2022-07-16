@@ -65,6 +65,7 @@
 }
 
 .call {
+	display: inline-flex;
 	color: var(--white-color);
 	transition: color 0.3s ease 0s;
 
@@ -87,12 +88,27 @@
 	flex-wrap: wrap;
 	justify-content: center;
 
+	@include mq("tablet-s", max) {
+		flex-direction: column;
+		margin-bottom: 100px;
+	}
+
 	&__item {
 		color: var(--white-color);
 		font-size: 16px;
 		position: relative;
 		padding-bottom: 10px;
 		margin: 0 22px;
+
+		@include mq("tablet-s", max) {
+			margin: 0;
+			text-align: left;
+
+			&.blog {
+				padding-right: 0;
+				position: static;
+			}
+		}
 	}
 
 	&__link {

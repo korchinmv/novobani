@@ -78,9 +78,6 @@ const checkWeight = (fontname) => {
 		case /Bold/.test(fontname):
 			weight = 700;
 			break;
-		case /Heavy/.test(fontname):
-			weight = 700;
-			break;
 		case /ExtraBold/.test(fontname):
 			weight = 800;
 			break;
