@@ -1,0 +1,31 @@
+.title {
+	color: var(--black-color);
+	font-weight: 600;
+	font-size: 36px;
+	position: relative;
+
+	@include mq("tablet-s", max) {
+		font-size: 26px;
+	}
+
+	@include mq("phone", max) {
+		font-size: 22px;
+	}
+
+	&--orange-horizontal {
+		padding-left: 105px;
+		margin-left: -105px;
+
+		&:before {
+			content: "";
+			display: block;
+			background-color: var(--accent-color);
+			width: 80px;
+			height: 3px;
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+}

@@ -268,3 +268,18 @@
 		}
 	}
 }
+
+.products {
+	background-color: transparent;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 70px;
+
+	@include mq("tablet", max) {
+		gap: 40px;
+	}
+
+	@include mq("phone", max) {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}

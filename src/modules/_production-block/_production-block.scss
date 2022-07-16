@@ -1,0 +1,31 @@
+.production-block {
+	padding: 105px 0 25px;
+
+	@include mq("tablet-s", max) {
+		padding-top: 60px;
+	}
+
+	@include mq("phone", max) {
+		padding-top: 40px;
+	}
+
+	&__title {
+		background-color: transparent;
+		margin-bottom: 15px;
+	}
+
+	&__mesg {
+		color: var(--accent-color);
+		display: block;
+		max-width: 305px;
+		width: 100%;
+		margin-bottom: 35px;
+
+		span {
+			font-weight: 700;
+		}
+	}
+
+	&__products {
+	}
+}
