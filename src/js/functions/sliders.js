@@ -7,7 +7,7 @@
 // Подключаем слайдер Swiper из node_modules
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
-import Swiper, { EffectFade, Autoplay } from 'swiper';
+import Swiper, { EffectFade, Autoplay, Thumbs, Navigation } from 'swiper';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -18,7 +18,8 @@ EffectFade, Lazy, Manipulation
 // Инициализация слайдеров
 function initSliders() {
 	// Перечень слайдеров
-	// Проверяем, есть ли слайдер на стронице
+	// Проверяем, есть ли слайдер на странице
+
 	if (document.querySelector('.main-slider')) { // Указываем скласс нужного слайдера
 		// Создаем слайдер
 		new Swiper('.main-slider', { // Указываем скласс нужного слайдера
@@ -41,10 +42,10 @@ function initSliders() {
 
 			// Эффекты
 			effect: 'fade',
-			// autoplay: {
-			// 	delay: 5000,
-			// 	disableOnInteraction: false,
-			// },
+			autoplay: {
+				delay: 5000,
+				disableOnInteraction: false,
+			},
 
 			// Пагинация
 			/*
@@ -96,7 +97,58 @@ function initSliders() {
 			}
 		});
 	}
+
+
+	if (document.querySelector('.thumbs-one')) {
+		new Swiper('.thumbs-one', {
+			modules: [EffectFade, Thumbs, Navigation],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			spaceBetween: 0,
+			autoHeight: false,
+			speed: 800,
+			effect: 'fade',
+			grabCursor: true,
+			watchSlidesVisibility: true,
+
+			breakpoints: {
+				320: {
+					slidesPerView: 1,
+					loop: true,
+
+					navigation: {
+						prevEl: '.swiper-button-prev',
+						nextEl: '.swiper-button-next',
+					},
+				},
+				480: {
+					loop: false,
+				},
+			},
+
+			thumbs: {
+				swiper: {
+					el: '.thumbs-two',
+
+					breakpoints: {
+						480: {
+							slidesPerView: 3,
+							spaceBetween: 15,
+						},
+						560: {
+							slidesPerView: 3,
+							spaceBetween: 30,
+						},
+					},
+				}
+			},
+		});
+	}
 }
+
+
+
 // Скролл на базе слайдера (по классу swiper_scroll для оболочки слайдера)
 function initSlidersScroll() {
 	// Добавление классов слайдера

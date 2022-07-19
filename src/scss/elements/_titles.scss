@@ -28,4 +28,21 @@
 			transform: translateY(-50%);
 		}
 	}
+
+	&--vertical-black {
+		padding-left: 75px;
+		margin-left: -75px;
+
+		&:before {
+			content: "";
+			display: block;
+			background-color: var(--black-color);
+			width: 20px;
+			height: 250px;
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
 }
