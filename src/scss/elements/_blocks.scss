@@ -283,3 +283,32 @@
 		grid-template-columns: repeat(1, 1fr);
 	}
 }
+
+.blog-list {
+	display: flex;
+	justify-content: space-between;
+
+	@include mq("phone", max) {
+		flex-direction: column;
+	}
+
+	&__item {
+		flex: 0 1 350px;
+
+		&:not(:last-child) {
+			margin-right: 15px;
+
+			@include mq("phone", max) {
+				margin-right: 0;
+			}
+		}
+
+		@include mq("phone", max) {
+			flex-basis: auto;
+
+			&:not(:last-child) {
+				margin-bottom: 30px;
+			}
+		}
+	}
+}

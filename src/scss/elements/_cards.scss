@@ -92,3 +92,96 @@
 		transition: color 0.3s ease 0s, font-size 0.3s ease 0s;
 	}
 }
+
+.card-blog {
+	&__img-box {
+		position: relative;
+
+		&:before,
+		&:after {
+			content: "";
+			display: block;
+			top: 50%;
+			left: 50%;
+			position: absolute;
+			transform: translate(-50%, -50%);
+		}
+
+		&:before {
+			background-image: url(../images/icons/icon-play.svg);
+			background-repeat: no-repeat;
+			background-size: 19px 27px;
+			width: 19px;
+			height: 27px;
+		}
+
+		&::after {
+			border: 7px solid var(--accent-color);
+			border-radius: 50%;
+			width: 70px;
+			height: 70px;
+			transition: width 0.2s ease 0s, height 0.2s ease 0s;
+
+			@include mq("tablet-s", max) {
+				border: 4px solid var(--accent-color);
+				width: 50px;
+				height: 50px;
+			}
+		}
+	}
+
+	&__img {
+		border-radius: 20px 0px;
+		margin-bottom: 25px;
+
+		@include mq("tablet", max) {
+			margin-bottom: 10px;
+		}
+
+		@include mq("phone", max) {
+			width: 100%;
+			height: 200px;
+		}
+	}
+
+	&__link {
+		@media (any-hover: hover) {
+			&:hover {
+				.card-blog__title {
+					color: var(--accent-color);
+				}
+
+				.card-blog__img-box::after {
+					width: 80px;
+					height: 80px;
+				}
+			}
+		}
+	}
+
+	&__date {
+		color: var(--grey-color);
+		display: block;
+		font-size: 12px;
+		margin-bottom: 10px;
+
+		@include mq("tablet", max) {
+			margin-bottom: 5px;
+		}
+	}
+
+	&__title {
+		font-weight: 400;
+		text-decoration-line: underline;
+		text-decoration-thickness: 1px;
+		text-underline-offset: 3px;
+		transition: color 0.3s ease 0s;
+
+		@include line-clamp(2);
+
+		@include mq("tablet-s", max) {
+			font-size: 16px;
+			text-underline-offset: 1px;
+		}
+	}
+}

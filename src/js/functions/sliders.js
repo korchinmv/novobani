@@ -116,15 +116,15 @@ function initSliders() {
 				320: {
 					slidesPerView: 1,
 					loop: true,
-
-					navigation: {
-						prevEl: '.swiper-button-prev',
-						nextEl: '.swiper-button-next',
-					},
 				},
 				480: {
 					loop: false,
 				},
+			},
+
+			navigation: {
+				prevEl: '.swiper-button-prev',
+				nextEl: '.swiper-button-next',
 			},
 
 			thumbs: {

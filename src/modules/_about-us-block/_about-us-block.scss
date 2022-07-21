@@ -150,6 +150,13 @@
 		max-width: 220px;
 		width: 100%;
 		margin-bottom: 60px;
+		transition: text-decoration 0.3s ease 0s;
+
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: transparent;
+			}
+		}
 
 		@include mq("tablet", max) {
 			margin-bottom: 0;
@@ -219,6 +226,15 @@
 
 	@include mq("phone", max) {
 		margin-bottom: 15px;
+	}
+
+	.swiper-button-prev,
+	.swiper-button-next {
+		display: none;
+
+		@include mq("phone-s", max) {
+			display: block;
+		}
 	}
 }
 

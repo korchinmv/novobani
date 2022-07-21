@@ -1,0 +1,71 @@
+.blog-block {
+	padding-top: 90px;
+	position: relative;
+
+	@include mq("tablet", max) {
+		padding-top: 70px;
+	}
+
+	@include mq("phone", max) {
+		padding-top: 50px;
+	}
+
+	&::before {
+		content: "";
+		background-image: url(../images/blog-block/blog-bg.png);
+		background-repeat: no-repeat;
+		width: 1600px;
+		height: 900px;
+		position: absolute;
+		top: -50%;
+		right: -30%;
+		z-index: -1;
+
+		@include mq("tablet", max) {
+			right: -80%;
+		}
+	}
+
+	&__title-box {
+		display: flex;
+		align-items: center;
+		margin-bottom: 65px;
+
+		@include mq("tablet", max) {
+			margin-bottom: 30px;
+		}
+
+		@include mq("phone", max) {
+			flex-direction: column;
+			margin-bottom: 20px;
+		}
+	}
+
+	&__title {
+		margin-right: 40px;
+		line-height: 1;
+
+		@include mq("phone", max) {
+			margin-bottom: 5px;
+			align-self: flex-start;
+		}
+	}
+
+	&__link {
+		color: var(--accent-color);
+		display: inline-block;
+		text-decoration: underline;
+		align-self: flex-end;
+		transition: text-decoration 0.3s ease 0s;
+
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: transparent;
+			}
+		}
+
+		@include mq("phone", max) {
+			align-self: flex-start;
+		}
+	}
+}
