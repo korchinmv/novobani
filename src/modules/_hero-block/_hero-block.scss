@@ -108,36 +108,19 @@
 		}
 	}
 
+	&__link {
+		@include mq("tablet-s", max) {
+			order: 1;
+			margin-bottom: 20px;
+		}
+	}
+
 	&__btn {
 		margin-right: 65px;
 
 		@include mq("tablet-s", max) {
 			font-size: 16px;
 			order: 2;
-		}
-	}
-
-	&__link {
-		display: block;
-		color: var(--brown-color);
-		text-decoration: underline;
-		padding-left: 60px;
-		position: relative;
-
-		&:before {
-			content: "";
-			background-image: url(../images/icons/icon-workplace.svg);
-			display: block;
-			position: absolute;
-			top: -6px;
-			left: 0;
-			width: 30px;
-			height: 30px;
-		}
-
-		@include mq("tablet", max) {
-			order: 1;
-			margin-bottom: 20px;
 		}
 	}
 

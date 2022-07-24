@@ -7,7 +7,7 @@
 // Подключаем слайдер Swiper из node_modules
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
-import Swiper, { EffectFade, Autoplay, Thumbs, Navigation } from 'swiper';
+import Swiper, { EffectFade, Autoplay, Thumbs, Navigation, Pagination } from 'swiper';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -20,7 +20,7 @@ function initSliders() {
 	// Перечень слайдеров
 	// Проверяем, есть ли слайдер на странице
 
-	if (document.querySelector('.main-slider')) { // Указываем скласс нужного слайдера
+	if (document.querySelector('.main-slider')) {
 		// Создаем слайдер
 		new Swiper('.main-slider', { // Указываем скласс нужного слайдера
 			// Подключаем модули слайдера
@@ -98,7 +98,6 @@ function initSliders() {
 		});
 	}
 
-
 	if (document.querySelector('.thumbs-one')) {
 		new Swiper('.thumbs-one', {
 			modules: [EffectFade, Thumbs, Navigation],
@@ -142,6 +141,42 @@ function initSliders() {
 						},
 					},
 				}
+			},
+		});
+	}
+
+	if (document.querySelector('.gallery-slider')) {
+		new Swiper('.gallery-slider', {
+
+			modules: [Navigation, Pagination],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			spaceBetween: 0,
+			speed: 800,
+			loop: true,
+			centeredSlides: true,
+
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+
+			navigation: {
+				prevEl: '.swiper-button-prev',
+				nextEl: '.swiper-button-next',
+			},
+
+			breakpoints: {
+				320: {
+					slidesPerView: 1,
+					slidesPerGroup: 1,
+					spaceBetween: 0,
+				},
+				480: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
 			},
 		});
 	}
